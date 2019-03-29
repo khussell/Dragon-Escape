@@ -7,7 +7,9 @@ var targetNum,
     backgroundImage= 0,
     wins= 0,
     losses= 0,
-    score= 0
+    score= 0,
+    crystalNumArray= [],
+    crystalMin= 0
 
 
 //connecting to html elements
@@ -28,6 +30,19 @@ var targetNumText= $("#target"),
     dragonPic6= $("#dragon6")
 
 
+
+$("#instruct").on("click", function(){
+   $(".content").css("display", "block") 
+})
+$("#closeInstruct").on("click", function(){
+    $(".content").css("display", "none") 
+ })
+ 
+
+
+
+
+
 //game functions
 
 var game={
@@ -35,7 +50,7 @@ var game={
     winOrLose: function(){
         if(score === targetNum){
             this.won()
-        }else if(score>= targetNum){
+        }else if(score>= targetNum|| (targetNum-score) < crystalMin){
             this.lose()
         }
     },
@@ -50,7 +65,12 @@ var game={
     },
 
     lose: function(){
+        losses+= 1
+        lossesText.text("Losses: " + losses)
+        if(losses)
+        directText.text("Oh noooo! Don't worry the dragon is merciful, try again")
 
+        this.reset()
     },
 
     reset: function(){
@@ -59,9 +79,14 @@ var game={
         targetNum = (Math.floor(Math.random()*120)+19)
         targetNumText.text(targetNum)
         crystalNum1 = (Math.floor(Math.random()*12)+1)
+        crystalNumArray.push(crystalNum1)
         crystalNum2 = (Math.floor(Math.random()*12)+1)
+        crystalNumArray.push(crystalNum2)
         crystalNum3 = (Math.floor(Math.random()*12)+1)
+        crystalNumArray.push(crystalNum3)
         crystalNum4 = (Math.floor(Math.random()*12)+1)
+        crystalNumArray.push(crystalNum4)
+        crystalMin= Math.min(...crystalNumArray)
     }
 
 
@@ -73,9 +98,14 @@ $(document).ready(function(){
   targetNum = (Math.floor(Math.random()*120)+19)
   targetNumText.text(targetNum)
   crystalNum1 = (Math.floor(Math.random()*12)+1)
+  crystalNumArray.push(crystalNum1)
   crystalNum2 = (Math.floor(Math.random()*12)+1)
+  crystalNumArray.push(crystalNum2)
   crystalNum3 = (Math.floor(Math.random()*12)+1)
+  crystalNumArray.push(crystalNum3)
   crystalNum4 = (Math.floor(Math.random()*12)+1)
+  crystalNumArray.push(crystalNum4)
+  crystalMin= Math.min(...crystalNumArray)
 
 $("#crys1").on("click", function(){
     score += crystalNum1

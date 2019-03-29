@@ -1,0 +1,95 @@
+body{
+    width: 100%;
+    position: relative;
+}
+
+
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.instructions{
+    width: 100%;
+}
+
+.info{
+    width: 305px;
+    margin: 0 auto;
+    
+}
+
+button{
+    width: 150px;
+}
+
+
+.content{
+    
+  margin: 0 auto;
+  position: absolute;
+  left: 25%;
+  top: 103px;
+  display: none;
+  background-color: silver;
+  padding: 30px;
+  width: 700px;
+  line-height: 2;
+  
+}
+
+.target{
+    text-align: center;
+    padding: 30px;
+    line-height: 2;
+    font-size: 20px;
+}
+
+#target{
+    font-size: 40px;
+    border: black 2px solid;
+    width: 100px;
+    text-align: center;
+    margin: 20px auto;
+    
+}
+
+.crystalPosition{
+    text-align: center;
+    height: 420px;
+    position: relative;
+}
+
+.crystalStuff{
+    height:420px;
+}
+
+.direct{
+    position: relative;
+    top: 185px;
+    font-size: 30px;
+}
+
+.crystalPhotoButtons{
+    position: absolute;
+    left: 27%;
+    bottom: 0;
+
+}
+
+.winsAndLosses{
+   border: black 2px solid;
+   width: 200px;
+}
+
+.userScore{
+    border: black 2px solid;
+    width: 200px;
+}
+
+
+.user{
+    display: flex;
+}
