@@ -59,12 +59,13 @@ button{
   left: 25%;
   top: 123px;
   display: none;
-  background-color: silver;
+  background-color: white;
   padding: 30px;
   width: 700px;
   line-height: 2;
   color: rgb(73, 47, 87);
   border: 3px solid rgb(73, 47, 87);
+  
 }
 
 .target{

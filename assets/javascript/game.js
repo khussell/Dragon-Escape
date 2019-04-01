@@ -92,6 +92,9 @@ var game={
         $(".everything").css("background-image", "url(https://www.chromethemer.com/wallpapers/chromebook-wallpapers/download/italian-beach-3840x2160.jpg)")
         $(".everything").css("opacity", ".65")
         $(".everything").css("top", "-100px")
+        $("#dragon6").css("display", "none")
+        directText.text("Congrats, you made it out alive!!!")
+        
     }
        this.reset()
     },
@@ -111,6 +114,9 @@ var game={
     },
 
     reset: function(){
+        if(directText.text === "Congrats, you made it out alive!!!"){
+            return;
+        } else{
         score=0
         scoreText.text(score)
         targetNum = (Math.floor(Math.random()*120)+19)
@@ -124,6 +130,7 @@ var game={
         crystalNum4 = (Math.floor(Math.random()*12)+1)
         crystalNumArray.push(crystalNum4)
         crystalMin= Math.min(...crystalNumArray)
+        }
     },
 
     resetDirect: function(){
@@ -132,7 +139,27 @@ var game={
         } else if(directText.text() === "Yay! The dragon let you pass, but there's another!"){
             directText.text("Click a crystal!")
         }
+    },
+
+    endGame: function(){
+        if(wins === 6){
+            targetNumText.text("Yay!")
+            crystalNum1 = 0
+            crystalNum2 = 0
+            crystalNum3 = 0
+            crystalNum4 = 0
+        
+        }else if(losses >= 5){
+            targetNumText.text("Noo!")
+            crystalNum1 = 0
+            crystalNum2 = 0
+            crystalNum3 = 0
+            crystalNum4 = 0
+    }else{
+        return;
     }
+    }
+
 
 
 }
@@ -140,6 +167,9 @@ var game={
 
 
 $(document).ready(function(){
+    
+         
+
   targetNum = (Math.floor(Math.random()*120)+19)
   targetNumText.text(targetNum)
   crystalNum1 = (Math.floor(Math.random()*12)+1)
@@ -153,12 +183,14 @@ $(document).ready(function(){
   crystalMin= Math.min(...crystalNumArray)
 
 $("#crys1").on("click", function(){
+    game.endGame()
     game.resetDirect()
     score += crystalNum1
     scoreText.text(score)
     game.winOrLose()
 })
 $("#crys2").on("click", function(){
+    game.endGame()
     game.resetDirect()
     score += crystalNum2
     scoreText.text(score) 
@@ -166,12 +198,14 @@ $("#crys2").on("click", function(){
  
 })
 $("#crys3").on("click", function(){
+    game.endGame()
     game.resetDirect()
     score += crystalNum3
     scoreText.text(score) 
     game.winOrLose()
 })
 $("#crys4").on("click", function(){
+    game.endGame()
     game.resetDirect()
     score += crystalNum4
     scoreText.text(score) 
