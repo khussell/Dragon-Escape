@@ -186,23 +186,14 @@ var game={
 
 
 
-    //if wins equal 6 (all backgrounds have been shown), crystal values will equal 0 which will break the game
-    endGame: function(){
-        if(wins === 6){
-           
-        }
-    }
-
-
-
 }
     
 
 
 $(document).ready(function(){
     
-    
-
+  //initializing target number and crystal values
+  //crystal values put in an array to find crystal minimum value for winOrLose function  
   targetNum = (Math.floor(Math.random()*120)+19)
   targetNumText.text(targetNum)
   crystalNum1 = (Math.floor(Math.random()*12)+1)
@@ -215,42 +206,37 @@ $(document).ready(function(){
   crystalNumArray.push(crystalNum4)
   crystalMin= Math.min(...crystalNumArray)
 
+
+//each crystal button will be taken to game functions
+//user score will add each crystal value when clicked
 $("#crys1").on("click", function(){
-    game.endGame()
     game.resetDirect()
     score += crystalNum1
     scoreText.text(score)
     game.winOrLose()
 })
+
 $("#crys2").on("click", function(){
-    game.endGame()
     game.resetDirect()
     score += crystalNum2
     scoreText.text(score) 
     game.winOrLose()
  
 })
+
 $("#crys3").on("click", function(){
-    game.endGame()
     game.resetDirect()
     score += crystalNum3
     scoreText.text(score) 
     game.winOrLose()
 })
+
 $("#crys4").on("click", function(){
-    game.endGame()
     game.resetDirect()
     score += crystalNum4
     scoreText.text(score) 
     game.winOrLose()
 })
-
-
-
-
-
-
-
 
 
 

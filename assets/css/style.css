@@ -16,8 +16,6 @@ body{
     width:100%;
 }
 
-
-
 h1{
     text-align: center;
     font-size: 50px;
@@ -31,14 +29,11 @@ h1{
     text-shadow: 3px 3px rgb(73, 47, 87);
 }
 
-.instructions{
-    width: 100%;
-}
+.instructions{ width: 100%}
 
 .info{
     width: 305px;
-    margin: 0 auto;
-    
+    margin: 0 auto;  
 }
 
 button{
@@ -64,8 +59,7 @@ button{
   width: 700px;
   line-height: 2;
   color: rgb(73, 47, 87);
-  border: 3px solid rgb(73, 47, 87);
-  
+  border: 3px solid rgb(73, 47, 87); 
 }
 
 .target{
@@ -101,9 +95,7 @@ button{
     position: relative;
 }
 
-.crystalStuff{
-    height:320px;
-}
+.crystalStuff{ height:320px}
 
 .direct{
     position: relative;
@@ -140,8 +132,6 @@ button{
    text-align: center;
 }
 
-
-
 .user{
     display: flex;
     color: white;
@@ -164,8 +154,7 @@ button{
     top: 60px;
     right: 700px;
     z-index: 1;
-    display:none;
-   
+    display:none; 
 }
 
 .dragon2{
@@ -173,8 +162,7 @@ button{
     top: -150px;
     right: 0px;
     z-index: 1;
-    display: none;
-   
+    display: none;  
 }
 
 .dragon4{
@@ -183,8 +171,7 @@ button{
     right: 0px;
     z-index: 1;
     height: 400px;
-   display:none;
-   
+   display:none;   
 }
 
 .dragon5{
@@ -193,9 +180,7 @@ button{
     right: 1000px;
     z-index: 1;
     height: 400px;
-    display: none;
-   
-   
+    display: none;   
 }
 
 .dragon6{
@@ -204,7 +189,5 @@ button{
     right: 1000px;
     z-index: 1;
     height: 800px;
-    display: none;
-   
-   
+    display: none;   
 }
