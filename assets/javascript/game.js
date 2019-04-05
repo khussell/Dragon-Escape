@@ -158,7 +158,7 @@ var game={
         }else{
         score=0
         scoreText.text(score)
-        targetNum = (Math.floor(Math.random()*120)+19)
+        targetNum = (Math.floor(Math.random()*102)+19)
         targetNumText.text(targetNum)
         crystalNum1 = (Math.floor(Math.random()*12)+1)
         crystalNumArray.push(crystalNum1)
@@ -194,7 +194,7 @@ $(document).ready(function(){
     
   //initializing target number and crystal values
   //crystal values put in an array to find crystal minimum value for winOrLose function  
-  targetNum = (Math.floor(Math.random()*120)+19)
+  targetNum = (Math.floor(Math.random()*102)+19)
   targetNumText.text(targetNum)
   crystalNum1 = (Math.floor(Math.random()*12)+1)
   crystalNumArray.push(crystalNum1)
